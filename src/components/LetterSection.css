@@ -1,0 +1,1659 @@
+/* =========================================================
+   LETTER SECTION
+========================================================= */
+
+.letter-section {
+  position: relative;
+
+  width: 100%;
+  min-height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 60px 24px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(255, 248, 230, 0.95) 0%,
+      rgba(243, 226, 195, 0.9) 42%,
+      #ecd7ae 100%
+    );
+
+  color: #572015;
+}
+
+
+/* =========================================================
+   SUBTLE BACKGROUND GLOW
+========================================================= */
+
+.letter-glow {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 248, 225, 0.42);
+
+  filter: blur(80px);
+
+  pointer-events: none;
+
+  animation:
+    glowFloat
+    8s
+    ease-in-out
+    infinite;
+}
+
+
+.letter-glow-one {
+  top: 10%;
+  left: -180px;
+}
+
+
+.letter-glow-two {
+  bottom: 0;
+  right: -180px;
+
+  animation-delay: -4s;
+}
+
+
+@keyframes glowFloat {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(20px, -18px, 0)
+      scale(1.08);
+  }
+
+}
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+.letter-particle {
+  position: absolute;
+
+  color: #9c6c35;
+
+  opacity: 0.55;
+
+  pointer-events: none;
+
+  font-family:
+    Georgia,
+    serif;
+
+  animation:
+    particleFloat
+    5s
+    ease-in-out
+    infinite;
+}
+
+
+.particle-one {
+  top: 16%;
+  left: 15%;
+
+  font-size: 20px;
+}
+
+
+.particle-two {
+  top: 27%;
+  right: 14%;
+
+  font-size: 25px;
+
+  animation-delay: -2s;
+}
+
+
+.particle-three {
+  bottom: 25%;
+  left: 17%;
+
+  font-size: 16px;
+
+  animation-delay: -1s;
+}
+
+
+.particle-four {
+  bottom: 17%;
+  right: 15%;
+
+  font-size: 22px;
+
+  animation-delay: -3s;
+}
+
+
+.particle-five {
+  top: 45%;
+  right: 9%;
+
+  font-size: 13px;
+
+  animation-delay: -4s;
+}
+
+
+@keyframes particleFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+
+    opacity: 0.4;
+  }
+
+  50% {
+    transform:
+      translateY(-12px)
+      rotate(8deg);
+
+    opacity: 0.75;
+  }
+
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.letter-intro {
+  position: relative;
+
+  z-index: 8;
+
+  text-align: center;
+
+  margin-bottom: 28px;
+
+  animation:
+    letterIntroAppear
+    0.9s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+
+.letter-intro-small {
+  margin: 0 0 8px;
+
+  font-family:
+    "DM Sans",
+    sans-serif;
+
+  font-size: 12px;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+  color: #8b5a48;
+}
+
+
+.letter-intro h1 {
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(38px, 7vw, 62px);
+
+  line-height: 0.98;
+
+  font-weight: 500;
+
+  color: #572015;
+}
+
+
+@keyframes letterIntroAppear {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   LETTER SCENE
+========================================================= */
+
+.letter-scene {
+  position: relative;
+
+  width: 360px;
+  height: 400px;
+
+  perspective: 1200px;
+
+  z-index: 5;
+
+  animation:
+    envelopeFloat
+    5s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes envelopeFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translateY(-8px)
+      rotate(0.4deg);
+  }
+
+}
+
+
+/* =========================================================
+   LETTER PAPER
+========================================================= */
+
+.letter-paper {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 90px;
+
+  width: 290px;
+  height: 400px;
+
+  transform:
+    translateX(-50%)
+    translateY(175px)
+    rotate(0deg);
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff9e9,
+      #f8e9ca
+    );
+
+  border-radius: 3px;
+
+  box-sizing: border-box;
+
+  padding: 30px 27px;
+
+  box-shadow:
+    0 14px 35px
+    rgba(83, 46, 25, 0.18);
+
+  z-index: 2;
+
+  overflow: hidden;
+
+  transition:
+    transform 1.5s
+    cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 1s ease;
+}
+
+
+/* =========================================================
+   PAPER TEXTURE
+========================================================= */
+
+.letter-paper::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.2;
+
+  background-image:
+    radial-gradient(
+      rgba(110, 75, 40, 0.18)
+      0.6px,
+      transparent 0.6px
+    );
+
+  background-size:
+    5px 5px;
+}
+
+
+/* =========================================================
+   PAPER INNER
+========================================================= */
+
+.letter-paper-inner {
+  position: relative;
+
+  z-index: 2;
+
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   GREETING
+========================================================= */
+
+.letter-greeting {
+  margin: 0 0 24px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 25px;
+
+  font-style: italic;
+
+  color: #6d2b1d;
+}
+
+
+/* =========================================================
+   LETTER MESSAGE
+========================================================= */
+
+.letter-message {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+.letter-line {
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 16px;
+
+  line-height: 1.25;
+
+  color: #603124;
+
+  opacity: 0;
+
+  transform:
+    translateY(12px);
+}
+
+
+/* =========================================================
+   LETTER ENDING
+========================================================= */
+
+.letter-ending {
+  margin-top: auto;
+
+  text-align: right;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  color: #6d2b1d;
+
+  opacity: 0;
+
+  transform:
+    translateY(12px);
+}
+
+
+.letter-ending p {
+  margin: 0 0 6px;
+
+  font-size: 18px;
+
+  font-style: italic;
+}
+
+
+.letter-ending span {
+  display: block;
+
+  font-size: 13px;
+
+  font-style: italic;
+}
+
+
+.letter-ending strong {
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: 17px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   ENVELOPE
+========================================================= */
+
+.envelope {
+  position: absolute;
+
+  left: 50%;
+  bottom: 35px;
+
+  width: 340px;
+  height: 225px;
+
+  transform:
+    translateX(-50%);
+
+  z-index: 5;
+
+  filter:
+    drop-shadow(
+      0 18px 24px
+      rgba(87, 32, 21, 0.18)
+    );
+}
+
+
+/* =========================================================
+   ENVELOPE BACK
+========================================================= */
+
+.envelope-back {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ead0a4,
+      #f1dcba
+    );
+
+  border-radius:
+    4px
+    4px
+    10px
+    10px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   ENVELOPE FRONT
+========================================================= */
+
+.envelope-front {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+
+  height: 67%;
+
+  z-index: 5;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e5c494,
+      #f0d7ad
+    );
+
+  clip-path:
+    polygon(
+      0 0,
+      50% 55%,
+      100% 0,
+      100% 100%,
+      0 100%
+    );
+
+  border-radius:
+    0
+    0
+    9px
+    9px;
+}
+
+
+/* =========================================================
+   ENVELOPE FLAP
+========================================================= */
+
+.envelope-flap {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 67%;
+
+  z-index: 7;
+
+  transform-origin:
+    top center;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f3dfbd,
+      #dfbd86
+    );
+
+  clip-path:
+    polygon(
+      0 0,
+      100% 0,
+      50% 78%
+    );
+
+  transition:
+    transform 1s
+    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================================
+   FLAP INNER LINE
+========================================================= */
+
+.envelope-flap-inner {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border-top:
+    1px solid
+    rgba(111, 73, 34, 0.16);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   ENVELOPE SEAL
+========================================================= */
+
+.envelope-seal {
+  position: absolute;
+
+  left: 50%;
+  top: 54%;
+
+  width: 58px;
+  height: 58px;
+
+  transform:
+    translate(-50%, -50%);
+
+  z-index: 10;
+
+  border:
+    2px solid
+    rgba(117, 48, 31, 0.55);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #9c3929,
+      #702016 70%
+    );
+
+  color:
+    #f4d99f;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 14px
+    rgba(87, 32, 21, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.envelope-seal span {
+  font-size: 22px;
+
+  line-height: 1;
+
+  transform:
+    translateY(-1px);
+}
+
+
+.envelope-seal:hover {
+  transform:
+    translate(-50%, -50%)
+    scale(1.08);
+
+  box-shadow:
+    0 8px 20px
+    rgba(87, 32, 21, 0.3);
+}
+
+
+.envelope-seal:active {
+  transform:
+    translate(-50%, -50%)
+    scale(0.96);
+}
+
+
+/* =========================================================
+   LETTER SHADOW INSIDE ENVELOPE
+========================================================= */
+
+.envelope-letter-shadow {
+  position: absolute;
+
+  left: 50%;
+  bottom: 35px;
+
+  width: 260px;
+  height: 100px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    rgba(89, 49, 27, 0.12);
+
+  filter:
+    blur(16px);
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   OPENING STATE
+========================================================= */
+
+.letter-scene--opening {
+
+  animation:
+    none;
+}
+
+
+/* =========================================================
+   FLAP OPENS
+========================================================= */
+
+.letter-scene--opening
+.envelope-flap {
+
+  transform:
+    rotateX(180deg);
+
+  z-index: 3;
+}
+
+
+/* =========================================================
+   SEAL DISAPPEARS
+========================================================= */
+
+.letter-scene--opening
+.envelope-seal {
+
+  opacity: 0;
+
+  transform:
+    translate(-50%, -50%)
+    scale(0.5);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.5s ease;
+}
+
+
+/* =========================================================
+   LETTER RISES
+========================================================= */
+
+.letter-scene--opened
+.letter-paper {
+
+  transform:
+    translateX(-50%)
+    translateY(-125px)
+    rotate(-1deg);
+
+  box-shadow:
+    0 25px 55px
+    rgba(83, 46, 25, 0.22);
+
+  z-index: 8;
+}
+
+
+/* =========================================================
+   LETTER TEXT ANIMATION
+========================================================= */
+
+.letter-scene--opened
+.letter-line-one {
+
+  animation:
+    letterTextReveal
+    0.7s
+    0.7s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+
+.letter-scene--opened
+.letter-line-two {
+
+  animation:
+    letterTextReveal
+    0.7s
+    1s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+
+.letter-scene--opened
+.letter-line-three {
+
+  animation:
+    letterTextReveal
+    0.7s
+    1.3s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+
+.letter-scene--opened
+.letter-line-four {
+
+  animation:
+    letterTextReveal
+    0.7s
+    1.6s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+
+.letter-scene--opened
+.letter-line-five {
+
+  animation:
+    letterTextReveal
+    0.7s
+    1.9s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+
+/* =========================================================
+   ENDING REVEAL
+========================================================= */
+
+.letter-scene--opened
+.letter-ending {
+
+  animation:
+    letterTextReveal
+    0.8s
+    2.3s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+
+@keyframes letterTextReveal {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(14px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+/* =========================================================
+   OPEN BUTTON
+========================================================= */
+
+.open-letter-button {
+
+  position: relative;
+
+  z-index: 20;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 12px;
+
+  padding:
+    13px
+    23px;
+
+  border:
+    1px solid
+    rgba(87, 32, 21, 0.35);
+
+  border-radius: 999px;
+
+  background:
+    rgba(
+      255,
+      248,
+      232,
+      0.7
+    );
+
+  color:
+    #572015;
+
+  font-family:
+    "DM Sans",
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing:
+    0.08em;
+
+  text-transform:
+    uppercase;
+
+  cursor: pointer;
+
+  backdrop-filter:
+    blur(8px);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.open-letter-button:hover {
+
+  transform:
+    translateY(-4px);
+
+  background:
+    #572015;
+
+  color:
+    #fff8e8;
+
+  box-shadow:
+    0
+    10px
+    25px
+    rgba(
+      87,
+      32,
+      21,
+      0.18
+    );
+}
+
+
+.open-letter-button:active {
+
+  transform:
+    translateY(-1px)
+    scale(0.97);
+}
+
+
+/* =========================================================
+   OPEN BUTTON ARROW
+========================================================= */
+
+.open-letter-arrow {
+
+  font-size: 18px;
+
+  line-height: 1;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.open-letter-button:hover
+.open-letter-arrow {
+
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================================
+   FINAL MESSAGE
+========================================================= */
+
+.letter-final-message {
+
+  position: absolute;
+
+  bottom: 34px;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  z-index: 20;
+
+  font-family:
+    "DM Sans",
+    sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing:
+    0.14em;
+
+  text-transform:
+    uppercase;
+
+  color:
+    #8b5a48;
+
+  opacity: 0;
+
+  animation:
+    finalMessageAppear
+    0.8s
+    3s
+    ease
+    forwards;
+}
+
+
+.final-heart {
+
+  color:
+    #8c271d;
+
+  font-size:
+    15px;
+
+  animation:
+    heartBeat
+    1.5s
+    3.8s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes finalMessageAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateX(-50%)
+      translateY(10px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateX(-50%)
+      translateY(0);
+
+  }
+
+}
+
+
+@keyframes heartBeat {
+
+  0%,
+  100% {
+
+    transform:
+      scale(1);
+
+  }
+
+  50% {
+
+    transform:
+      scale(1.25);
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .letter-section {
+
+    min-height: 100dvh;
+
+    padding:
+      40px
+      18px;
+
+  }
+
+
+  .letter-intro {
+
+    margin-bottom:
+      15px;
+
+  }
+
+
+  .letter-intro-small {
+
+    font-size:
+      10px;
+
+  }
+
+
+  .letter-intro h1 {
+
+    font-size:
+      42px;
+
+  }
+
+
+  .letter-scene {
+
+    width:
+      320px;
+
+    max-width:
+      100%;
+
+    height:
+      370px;
+
+  }
+
+
+  .envelope {
+
+    width:
+      300px;
+
+    height:
+      200px;
+
+  }
+
+
+  .letter-paper {
+
+    width:
+      255px;
+
+    height:
+      295px;
+
+    bottom:
+      75px;
+
+    padding:
+      25px
+      23px;
+
+  }
+
+
+  .letter-scene--opened
+  .letter-paper {
+
+    transform:
+      translateX(-50%)
+      translateY(-115px)
+      rotate(-1deg);
+
+  }
+
+
+  .letter-greeting {
+
+    font-size:
+      22px;
+
+    margin-bottom:
+      18px;
+
+  }
+
+
+  .letter-line {
+
+    font-size:
+      14px;
+
+  }
+
+
+  .letter-ending p {
+
+    font-size:
+      16px;
+
+  }
+
+
+  .letter-ending span {
+
+    font-size:
+      11px;
+
+  }
+
+
+  .letter-ending strong {
+
+    font-size:
+      15px;
+
+  }
+
+
+  .envelope-seal {
+
+    width:
+      52px;
+
+    height:
+      52px;
+
+  }
+
+
+  .open-letter-button {
+
+    margin-top:
+      4px;
+
+    padding:
+      12px
+      20px;
+
+    font-size:
+      10px;
+
+  }
+
+
+  .letter-particle {
+
+    opacity:
+      0.4;
+
+  }
+
+
+  .particle-one {
+
+    left:
+      6%;
+
+    top:
+      18%;
+
+  }
+
+
+  .particle-two {
+
+    right:
+      7%;
+
+    top:
+      30%;
+
+  }
+
+
+  .particle-three {
+
+    left:
+      8%;
+
+    bottom:
+      22%;
+
+  }
+
+
+  .particle-four {
+
+    right:
+      8%;
+
+    bottom:
+      18%;
+
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .letter-section {
+
+    padding:
+      30px
+      14px;
+
+  }
+
+
+  .letter-intro h1 {
+
+    font-size:
+      36px;
+
+  }
+
+
+  .letter-scene {
+
+    width:
+      290px;
+
+    height:
+      340px;
+
+  }
+
+
+  .envelope {
+
+    width:
+      270px;
+
+    height:
+      180px;
+
+  }
+
+
+  .letter-paper {
+
+    width:
+      230px;
+
+    height:
+      270px;
+
+    padding:
+      22px
+      20px;
+
+  }
+
+
+  .letter-scene--opened
+  .letter-paper {
+
+    transform:
+      translateX(-50%)
+      translateY(-100px)
+      rotate(-1deg);
+
+  }
+
+
+  .letter-line {
+
+    font-size:
+      12px;
+
+  }
+
+
+  .letter-greeting {
+
+    font-size:
+      19px;
+
+  }
+
+
+  .letter-ending p {
+
+    font-size:
+      14px;
+
+  }
+
+
+  .envelope-seal {
+
+    width:
+      46px;
+
+    height:
+      46px;
+
+  }
+
+}
+
+/* =========================================================
+   GO TO RAKHI BUTTON
+========================================================= */
+
+.go-to-rakhi-button {
+  position: absolute;
+
+  left: 50%;
+  bottom: 55px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 14px 24px;
+
+  border: 1px solid rgba(87, 32, 21, 0.25);
+  border-radius: 999px;
+
+  background: rgba(255, 248, 232, 0.65);
+
+  color: #572015;
+
+  font-family: "DM Sans", sans-serif;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(6px);
+
+  box-shadow:
+    0 8px 25px rgba(87, 32, 21, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.go-to-rakhi-button:hover {
+  transform: translateX(-50%) translateY(-5px);
+
+  background: #572015;
+
+  color: #fff8e8;
+
+  box-shadow:
+    0 14px 30px rgba(87, 32, 21, 0.18);
+}
+
+
+.go-to-rakhi-button:active {
+  transform: translateX(-50%) translateY(-2px);
+}
+
+
+/* TEXT */
+
+.go-to-rakhi-button span:first-child {
+  font-size: 13px;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+
+/* ARROW */
+
+.go-to-rakhi-arrow {
+  font-size: 22px;
+
+  line-height: 1;
+
+  animation: rakhiArrowBounce 1.5s ease-in-out infinite;
+}
+
+
+@keyframes rakhiArrowBounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+
+}
+
+
+/* =========================================================
+   BUTTON APPEARANCE
+========================================================= */
+
+.letter-scene--opened ~ .go-to-rakhi-button {
+  animation: rakhiButtonAppear 0.8s ease 0.5s both;
+}
+
+
+@keyframes rakhiButtonAppear {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(-50%)
+      translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(-50%)
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .go-to-rakhi-button {
+    bottom: 35px;
+
+    padding: 12px 20px;
+  }
+
+
+  .go-to-rakhi-button span:first-child {
+    font-size: 11px;
+  }
+
+
+  .go-to-rakhi-arrow {
+    font-size: 20px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .letter-glow,
+  .letter-particle,
+  .letter-scene,
+  .letter-intro,
+  .letter-paper,
+  .letter-line,
+  .letter-ending,
+  .letter-final-message,
+  .final-heart {
+
+    animation:
+      none !important;
+
+    transition:
+      none !important;
+
+  }
+
+}

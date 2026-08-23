@@ -1,0 +1,912 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap");
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  min-height: 100dvh;
+  margin: 0;
+
+  background: #f3e2c3;
+  color: #3d2118;
+
+  font-family: "DM Sans", sans-serif;
+
+  overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+}
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+#root {
+  width: 100%;
+  min-height: 100dvh;
+}
+
+
+/* =========================================================
+   SITE
+========================================================= */
+
+.rakhi-site {
+  position: relative;
+
+  width: 100%;
+  min-height: 100dvh;
+
+  overflow: hidden;
+
+  background: #f3e2c3;
+}
+
+
+/* =========================================================
+   HOME SCREEN
+========================================================= */
+
+.home-screen {
+  position: relative;
+
+  width: 100%;
+  min-height: 100dvh;
+
+  opacity: 0;
+
+  transform: scale(1.03);
+
+  transition:
+    opacity 1s ease,
+    transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+
+  pointer-events: none;
+}
+
+.home-screen--visible {
+  opacity: 1;
+
+  transform: scale(1);
+
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   MAIN SCREEN
+========================================================= */
+
+.main-screen {
+  position: relative;
+
+  width: 100%;
+  min-height: 100dvh;
+
+  overflow: hidden;
+
+  background: #f3e2c3;
+}
+
+
+/* =========================================================
+   DECORATIONS
+========================================================= */
+
+.main-decoration {
+  position: absolute;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   TOP RIGHT FLOWER
+========================================================= */
+
+.main-flower-top {
+  top: 1%;
+
+  right: -7%;
+
+  width: 43%;
+
+  height: auto;
+
+  opacity: 0;
+
+  transform: translateY(-20px) rotate(2deg);
+
+  animation:
+    flowerTopIn 1.3s ease forwards 0.6s,
+    flowerFloat 5s ease-in-out infinite 2s;
+}
+
+
+/* =========================================================
+   BOTTOM LEFT FLOWER
+========================================================= */
+
+.main-flower-bottom {
+  left: -10%;
+
+  bottom: -1%;
+
+  width: 42%;
+
+  height: auto;
+
+  opacity: 0;
+
+  transform: translateY(20px);
+
+  animation:
+    flowerBottomIn 1.3s ease forwards 0.7s,
+    flowerFloat 6s ease-in-out infinite 2.1s;
+}
+
+
+/* =========================================================
+   PAPER PLANE
+========================================================= */
+
+.main-flight {
+  left: 4%;
+
+  top: 39%;
+
+  width: 17%;
+
+  height: auto;
+
+  opacity: 0;
+
+  transform: translateX(-20px) rotate(-5deg);
+
+  animation:
+    flightIn 1s ease forwards 1s,
+    flightFloat 4s ease-in-out infinite 2s;
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.main-stars {
+  right: 3%;
+
+  top: 48%;
+
+  width: 15%;
+
+  height: auto;
+
+  opacity: 0;
+
+  transform: translateY(15px);
+
+  animation:
+    starsIn 1s ease forwards 1.1s,
+    starsFloat 4s ease-in-out infinite 2.2s;
+}
+
+
+/* =========================================================
+   PHOTO HANGING AREA
+========================================================= */
+
+.photo-hanging {
+  position: absolute;
+
+  top: 7%;
+
+  left: 50%;
+
+  width: 48%;
+
+  max-width: 270px;
+
+  z-index: 4;
+
+  transform: translateX(-50%);
+
+  opacity: 0;
+
+  transform-origin: top center;
+
+  animation:
+    photoEnter 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards 0.35s,
+    photoSwing 5s ease-in-out infinite 1.8s;
+}
+
+
+
+/* =========================================================
+   PHOTO
+========================================================= */
+
+.main-photo {
+  width: 100%;
+
+  height: auto;
+
+  display: block;
+
+  filter:
+    drop-shadow(
+      0 12px 14px rgba(70, 42, 20, 0.18)
+    );
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.main-message {
+  position: absolute;
+
+  top: 43%;
+
+  left: 50%;
+
+  width: 90%;
+
+  transform: translate(-50%, 20px);
+
+  text-align: center;
+
+  z-index: 5;
+
+  opacity: 0;
+
+  animation:
+    messageIn 1.2s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards
+    1s;
+}
+
+
+/* =========================================================
+   SMALL MESSAGE
+========================================================= */
+
+.main-message-small {
+  margin-bottom: 10px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(
+    28px,
+    7vw,
+    38px
+  );
+
+  line-height: 1;
+
+  font-weight: 600;
+
+  font-style: italic;
+
+  color: #3d2118;
+}
+
+
+/* =========================================================
+   MAIN MESSAGE HEADING
+========================================================= */
+
+.main-message h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(
+    35px,
+    9vw,
+    52px
+  );
+
+  line-height: 1.05;
+
+  font-weight: 500;
+
+  color: #6e3326;
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.scroll-indicator {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 8%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 10px;
+
+  z-index: 5;
+
+  opacity: 0;
+
+  animation:
+    scrollIn 1s ease forwards 1.7s;
+}
+
+
+/* =========================================================
+   SCROLL TEXT
+========================================================= */
+
+.scroll-indicator span {
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.15em;
+
+  color: #875747;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.scroll-arrow {
+  font-family: Arial, sans-serif;
+
+  font-size: 42px;
+
+  line-height: 0.8;
+
+  color: #875747;
+
+  animation: arrowBounce 1.8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ENVELOPE
+========================================================= */
+
+.envelope-intro {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100dvh;
+
+  overflow: hidden;
+
+  z-index: 100;
+
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   ENVELOPE SIDE
+========================================================= */
+
+.envelope-side {
+  position: absolute;
+
+  top: 0;
+
+  width: calc(50% - 2px);
+
+  height: 100dvh;
+
+  padding: 0;
+
+  margin: 0;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  box-shadow: none;
+
+  transition:
+    transform 1.35s cubic-bezier(
+      0.76,
+      0,
+      0.24,
+      1
+    );
+}
+
+
+/* =========================================================
+   LEFT
+========================================================= */
+
+.envelope-left {
+  left: 0;
+
+  transform: translate3d(0, 0, 0);
+
+  z-index: 102;
+}
+
+
+/* =========================================================
+   RIGHT
+========================================================= */
+
+.envelope-right {
+  right: 0;
+
+  transform: translate3d(0, 0, 0);
+
+  z-index: 101;
+}
+
+
+/* =========================================================
+   ENVELOPE IMAGE
+========================================================= */
+
+.envelope-side img {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  border: none;
+
+  outline: none;
+
+  box-shadow: none;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+}
+
+
+/* =========================================================
+   REMOVE BUTTON EFFECTS
+========================================================= */
+
+.envelope-side:hover,
+.envelope-side:focus,
+.envelope-side:focus-visible,
+.envelope-side:active {
+  border: none;
+
+  outline: none;
+
+  box-shadow: none;
+
+  background: transparent;
+}
+
+
+/* =========================================================
+   OPENING
+========================================================= */
+
+.envelope-intro--opened {
+  pointer-events: none;
+}
+
+
+/* LEFT GOES LEFT */
+
+.envelope-intro--opened .envelope-left {
+  transform: translate3d(-105%, 0, 0);
+}
+
+
+/* RIGHT GOES RIGHT */
+
+.envelope-intro--opened .envelope-right {
+  transform: translate3d(105%, 0, 0);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes photoEnter {
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(-50%)
+      translateY(-30px)
+      scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(-50%)
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+@keyframes photoSwing {
+  0% {
+    transform:
+      translateX(-50%)
+      rotate(-2deg);
+  }
+
+  25% {
+    transform:
+      translateX(-50%)
+      rotate(1.5deg);
+  }
+
+  50% {
+    transform:
+      translateX(-50%)
+      rotate(-1deg);
+  }
+
+  75% {
+    transform:
+      translateX(-50%)
+      rotate(1deg);
+  }
+
+  100% {
+    transform:
+      translateX(-50%)
+      rotate(-2deg);
+  }
+}
+
+
+@keyframes messageIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translate(-50%, 35px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translate(-50%, 0);
+  }
+}
+
+
+@keyframes flowerTopIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-30px)
+      rotate(4deg);
+  }
+
+  to {
+    opacity: 0.9;
+
+    transform:
+      translateY(0)
+      rotate(2deg);
+  }
+}
+
+
+@keyframes flowerBottomIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(30px);
+  }
+
+  to {
+    opacity: 0.9;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+@keyframes flowerFloat {
+  0%,
+  100% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -5px;
+  }
+}
+
+
+@keyframes flightIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(-25px)
+      rotate(-10deg);
+  }
+
+  to {
+    opacity: 0.9;
+
+    transform:
+      translateX(0)
+      rotate(-5deg);
+  }
+}
+
+
+@keyframes flightFloat {
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      rotate(-5deg);
+  }
+
+  50% {
+    transform:
+      translate(5px, -7px)
+      rotate(-2deg);
+  }
+}
+
+
+@keyframes starsIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(15px)
+      scale(0.9);
+  }
+
+  to {
+    opacity: 0.9;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+@keyframes starsFloat {
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-6px);
+  }
+}
+
+
+@keyframes scrollIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translate(-50%, 15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translate(-50%, 0);
+  }
+}
+
+
+@keyframes arrowBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .photo-hanging {
+    width: 53%;
+
+    top: 7%;
+  }
+
+  .photo-clothespin {
+    width: 14px;
+    height: 48px;
+    top: -27px;
+  }
+
+  .main-message {
+    top: 43%;
+  }
+
+  .main-message-small {
+    font-size: 27px;
+  }
+
+  .main-message h1 {
+    font-size: 34px;
+  }
+
+  .main-flight {
+    width: 18%;
+    left: 3%;
+    top: 40%;
+  }
+
+  .main-stars {
+    width: 16%;
+    right: 2%;
+    top: 47%;
+  }
+
+  .main-flower-top {
+    width: 46%;
+    right: -10%;
+  }
+
+  .main-flower-bottom {
+    width: 45%;
+    left: -12%;
+  }
+
+  .scroll-indicator {
+    bottom: 7%;
+  }
+}
+
+
+/* =========================================================
+   STANDARD PHONES
+========================================================= */
+
+@media (min-width: 361px) and (max-width: 480px) {
+
+  .photo-hanging {
+    width: 50%;
+
+    top: 7%;
+  }
+
+  .main-message {
+    top: 43%;
+  }
+
+  .main-flight {
+    width: 17%;
+    left: 4%;
+  }
+
+  .main-stars {
+    width: 15%;
+    right: 3%;
+  }
+}
+
+
+/* =========================================================
+   SAFE AREA
+========================================================= */
+
+@supports (padding: env(safe-area-inset-bottom)) {
+
+  .main-screen {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    scroll-behavior: auto !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}
